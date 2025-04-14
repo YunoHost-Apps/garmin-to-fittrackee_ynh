@@ -24,22 +24,6 @@ pushd "$install_dir"
 popd
 
 #=================================================
-# INITIALIZE DATABASE
-#=================================================
- ynh_script_progression "Initializing database..."
-
-set -a
-
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup config-tool --database-path "$install_dir"
-
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup garmin --email "$garmin_email" --password "$garmin_password" --store
-
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup fittrackee --client-id "$fittrackee_id" --client-secret "$fittrackee_secret" --fittrackee-domain "$fittrackee_domain" --force
-
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee sync
-set +a
-
-#=================================================
 # ADD A CRON JOB
 #=================================================
 ynh_config_add --template="garmin-to-fittrackee.cron" --destination="/etc/cron.d/$app"
