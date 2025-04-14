@@ -34,10 +34,6 @@ ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup config-tool --da
 
 ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup garmin --email "$garmin_email" --password "$garmin_password" --store
 
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup fittrackee --client-id "$fittrackee_id" --client-secret "$fittrackee_secret" --fittrackee-domain "$fittrackee_domain" --force
-
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee sync
-
 set +a
 
 #=================================================
