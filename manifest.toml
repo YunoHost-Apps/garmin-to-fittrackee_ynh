@@ -12,7 +12,6 @@ maintainers = ["Thovi98"]
 
 [upstream]
 license = "GPL-3.0"
-website = "https://example.com"
 code = "https://github.com/Dryusdan/garmin-to-fittrackee"
 
 [integration]
