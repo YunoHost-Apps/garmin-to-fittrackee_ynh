@@ -6,7 +6,7 @@ id = "garmin-to-fittrackee"
 name = "Garmin to FitTrackee"
 description.en = "A simple script to synchronize garmin to fitTrackee"
 
-version = "0.8.4~ynh1"
+version = "0.8.4~ynh0"
 
 maintainers = ["Thovi98"]
 
