@@ -30,9 +30,9 @@ ynh_script_progression "Initializing database..."
 
 set -a
 
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup config-tool --database-path "$install_dir"
+ynh_hide_warnings env HOME="$install_dir" "$install_dir"/venv/bin/garmin2fittrackee setup config-tool --database-path "$install_dir"
 
-ynh_hide_warnings $install_dir/venv/bin/garmin2fittrackee setup garmin --email "$garmin_email" --password "$garmin_password" --store
+ynh_hide_warnings env HOME="$install_dir" "$install_dir"/venv/bin/garmin2fittrackee setup garmin --email "$garmin_email" --password "$garmin_password" --store
 
 set +a
 
