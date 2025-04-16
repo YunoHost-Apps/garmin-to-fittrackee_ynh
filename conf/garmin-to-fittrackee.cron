@@ -1,3 +1,5 @@
 # Run __APP__ sync every hour
 
+HOME=__INSTALL_DIR__
+
 0 * * * * __APP__ __INSTALL_DIR__/venv/bin/garmin2fittrackee sync 2>> /var/log/__APP__/__APP__.log
