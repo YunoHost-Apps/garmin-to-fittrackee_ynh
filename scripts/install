@@ -35,14 +35,6 @@ ynh_hide_warnings env HOME="$install_dir" "$install_dir"/venv/bin/garmin2fittrac
 set +a
 
 #=================================================
-# ADD A CRON JOB
-#=================================================
-ynh_config_add --template="garmin-to-fittrackee.cron" --destination="/etc/cron.d/$app"
-
-chown root: "/etc/cron.d/$app"
-chmod 644 "/etc/cron.d/$app"
-
-#=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
