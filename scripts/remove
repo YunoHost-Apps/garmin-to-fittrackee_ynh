@@ -20,7 +20,7 @@ fi
 systemctl stop $app.timer
 systemctl disable $app.timer --quiet
 ynh_config_remove_systemd
-ynh_secure_remove "/etc/systemd/system/$app.timer"
+ynh_safe_rm "/etc/systemd/system/$app.timer"
 
 ynh_config_remove_logrotate
 
