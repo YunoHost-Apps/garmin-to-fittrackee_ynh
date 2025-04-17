@@ -27,13 +27,14 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 
 ynh_config_add_logrotate
 
-#=================================================
-# ADD A CRON JOB
-#=================================================
-ynh_config_add --template="garmin-to-fittrackee.cron" --destination="/etc/cron.d/$app"
+# Create a dedicated systemd config
+ynh_add_systemd_config
+yunohost service add $app --description="$app service" --log "/var/log/$app/$app.log"
 
-chown root: "/etc/cron.d/$app"
-chmod 644 "/etc/cron.d/$app"
+# Configure the systemd timer
+ynh_add_config --template="systemd.timer" --destination="/etc/systemd/system/$app.timer"
+systemctl enable $app.timer --quiet
+systemctl start $app.timer
 
 #=================================================
 # END OF SCRIPT
