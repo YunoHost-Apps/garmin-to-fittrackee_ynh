@@ -29,7 +29,9 @@ ynh_config_add_logrotate
 
 # Create a dedicated systemd config
 ynh_config_add_systemd
-yunohost service add $app --description="$app service" --log "/var/log/$app/$app.log"
+yunohost service add $app --description="$app service" --test_status="systemctl show $app.service  -p ActiveState --value | grep -v failed" --log "/var/log/$app/$app.log"
+# Disable the service, this is to prevent the service from being triggered at boot time
+systemctl disable $app.service --quiet
 
 # Configure the systemd timer
 ynh_config_add --template="systemd.timer" --destination="/etc/systemd/system/$app.timer"
