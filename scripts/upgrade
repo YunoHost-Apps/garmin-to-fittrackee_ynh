@@ -28,11 +28,11 @@ ynh_script_progression "Upgrading system configurations related to $app..."
 ynh_config_add_logrotate
 
 # Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 yunohost service add $app --description="$app service" --log "/var/log/$app/$app.log"
 
 # Configure the systemd timer
-ynh_add_config --template="systemd.timer" --destination="/etc/systemd/system/$app.timer"
+ynh_config_add --template="systemd.timer" --destination="/etc/systemd/system/$app.timer"
 systemctl enable $app.timer --quiet
 systemctl start $app.timer
 
