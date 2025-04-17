@@ -38,8 +38,6 @@ systemctl start $app.timer
 # RESTORE VARIOUS FILES
 #=================================================
 
-ynh_restore "/etc/cron.d/$app"
-
 ynh_restore "/var/log/$app/"
 
 #=================================================
