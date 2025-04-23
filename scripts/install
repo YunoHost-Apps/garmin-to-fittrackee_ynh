@@ -34,6 +34,8 @@ ynh_hide_warnings env HOME="$install_dir" "$install_dir"/venv/bin/garmin2fittrac
 
 set +a
 
+chown -R "$app": "$install_dir"
+
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================

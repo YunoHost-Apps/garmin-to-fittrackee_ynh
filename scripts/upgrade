@@ -20,6 +20,8 @@ pushd "$install_dir"
     ynh_safe_rm "$install_dir/.cache/pip"
 popd
 
+chown -R "$app": "$install_dir"
+
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
 #=================================================
