@@ -7,7 +7,7 @@ name = "Garmin to FitTrackee"
 description.en = "Synchronize Garmin to fitTrackee"
 description.fr = "Synchroniser Garmin avec fitTrackee"
 
-version = "0.10.2~ynh1"
+version = "0.11.0~ynh1"
 
 maintainers = ["Thovi98"]
 
