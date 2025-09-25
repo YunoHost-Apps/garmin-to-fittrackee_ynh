@@ -4,7 +4,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-
 source /usr/share/yunohost/helpers
 
 # Not saved by default
@@ -29,11 +28,8 @@ popd
 ynh_script_progression "Initializing database..."
 
 set -a
-
 ynh_hide_warnings env HOME=$install_dir CONFIG_PATH=$install_dir/.config DATABASE_PATH=$install_dir "$install_dir"/venv/bin/garmin2fittrackee setup config-tool
 set +a
-
-chown -R "$app": "$install_dir"
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -41,9 +37,6 @@ chown -R "$app": "$install_dir"
 ynh_script_progression "Adding $app's configuration files..."
 
 ynh_config_add --template=".env" --destination="$install_dir/.env"
-
-chmod 400 "$install_dir/.env"
-chown "$app": "$install_dir/.env"
 
 #=================================================
 # SYSTEM CONFIGURATION
