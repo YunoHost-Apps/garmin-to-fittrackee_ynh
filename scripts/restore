@@ -4,8 +4,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-
-
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -14,8 +12,6 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Restoring the app main directory..."
 
 ynh_restore "$install_dir"
-
-chown -R "$app":"$app" "$install_dir"
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATION
@@ -32,7 +28,6 @@ systemctl disable $app.service --quiet
 ynh_restore "/etc/systemd/system/$app.timer"
 systemctl enable $app.timer --quiet
 systemctl start $app.timer
-
 
 #=================================================
 # RESTORE VARIOUS FILES
