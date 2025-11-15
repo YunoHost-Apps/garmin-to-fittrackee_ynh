@@ -23,15 +23,6 @@ pushd "$install_dir"
 popd
 
 #=================================================
-# INITIALIZE DATABASE
-#=================================================
-ynh_script_progression "Initializing database..."
-
-set -a
-ynh_hide_warnings env HOME=$install_dir CONFIG_PATH=$install_dir/.config DATABASE_PATH=$install_dir "$install_dir"/venv/bin/garmin2fittrackee setup config-tool
-set +a
-
-#=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
