@@ -7,6 +7,9 @@ After installation, you have to perform following commands to be able to use Gar
 Open this URL in a browser, login to your FitTrackee account and authorize the app.
 
 After the operation, you will have to copy the link and put it back in the terminal (something like ``https://localhost/...``).
+
+⚠️ Be certain to copy/pasted all the line output (and do not ctrl+click on it). If you do not, the sync will fail. ⚠️
+
 There should be a message shown with the following mention: ``Logging successfull. Saving configuration fittrackee __web_application_flow``
 
 Finish the configuration by running a first sync:
